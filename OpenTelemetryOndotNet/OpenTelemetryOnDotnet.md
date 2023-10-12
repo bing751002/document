@@ -3,7 +3,10 @@
 
 # 前言
 
-本篇文章為紀錄如何在.NET中自動埋入OpenTelemetry並顯示於ELK stack
+本篇文章主題為
+1. 使用docker安裝ELK
+2. 使用Auto instrumentation 於 .net
+3. 使用Auto instrumentation 於 現有IIS的專案
 
 本文撰寫時的OTel版本為: `1.25`
 
@@ -174,7 +177,7 @@ services:
 ![Alt text](images/add-apm-agent-flow.gif)
 
 
-## 安裝OpenTelemetry 於 .net
+## 使用Auto instrumentation 於 .net
 
 以下安裝流程為參考Otel官方的[教學文件](https://opentelemetry.io/docs/instrumentation/net/getting-started/) 
 
@@ -281,7 +284,53 @@ $env:OTEL_DOTNET_AUTO_TRACES_CONSOLE_EXPORTER_ENABLED="false"
 $env:OTEL_DOTNET_AUTO_METRICS_CONSOLE_EXPORTER_ENABLED="false"
 $env:OTEL_DOTNET_AUTO_LOGS_CONSOLE_EXPORTER_ENABLED="false"
 Register-OpenTelemetryForCurrentSession -OTelServiceName "RollDiceService"
+Register-OpenTelemetryForIIS # for IIS
 ```
+
+`Register-OpenTelemetryForIIS`這行為將Otel註冊到IIS，若不需要可以不用執行。修改完config之後重啟程式應可以看到資料已經送到ELK了。
+
+## 使用Auto instrumentation 於 現有IIS的專案
+
+針對現有部屬於IIS的專案，可以透過以下步驟進行Auto instrumentation
+
+1. 開啟power-shell (需要管理員權限)，並執行以下指令
+
+```bash
+```bash
+$module_url = "https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/latest/download/OpenTelemetry.DotNet.Auto.psm1"
+$download_path = Join-Path $env:temp "OpenTelemetry.DotNet.Auto.psm1"
+Invoke-WebRequest -Uri $module_url -OutFile $download_path -UseBasicParsing
+Import-Module $download_path
+Install-OpenTelemetryCore
+Register-OpenTelemetryForIIS # for IIS
+```
+
+2. 修改專案的`web.config`，加入以下內容
+
+```xml
+	<add key="OTEL_TRACES_EXPORTER" value="otlp" />
+	<add key="OTEL_METRICS_EXPORTER" value="otlp" />
+	<add key="OTEL_LOGS_EXPORTER" value="otlp" />
+	<add key="OTEL_RESOURCE_ATTRIBUTES" value="service.name=B2EWebAPI,service.version=1.0,deployment.environment=production" /> <!--需依照需求修改-->
+	<add key="OTEL_EXPORTER_OTLP_ENDPOINT" value="http://localhost:8200" /> <!--需依照需求修改-->
+	<add key="OTEL_EXPORTER_OTLP_HEADERS" value="Authorization=Bearer aExDTkE0c0JPc2prZXVqSkZmbjQ6MWI2dl9rUkdRYkNRR2dfamV3NnFlUQ==" /> <!--需依照需求修改-->
+  
+```
+若為.net core的專案則是在web.config內加入下述內容
+```xml
+ <environmentVariable name="OTEL_DOTNET_AUTO_TRACES_CONSOLE_EXPORTER_ENABLED" value="true" />
+          <environmentVariable name="OTEL_DOTNET_AUTO_METRICS_CONSOLE_EXPORTER_ENABLED" value="true" />
+          <environmentVariable name="OTEL_TRACES_EXPORTER" value="otlp" />
+          <environmentVariable name="OTEL_METRICS_EXPORTER" value="otlp" />
+          <environmentVariable name="OTEL_LOGS_EXPORTER" value="otlp" />
+          <environmentVariable name="OTEL_RESOURCE_ATTRIBUTES" value="service.name=rolling,service.version=1.0,deployment.environment=production" />
+          <environmentVariable name="OTEL_EXPORTER_OTLP_ENDPOINT" value="http://localhost:8200" />
+          <environmentVariable name="OTEL_EXPORTER_OTLP_HEADERS" value="Authorization=Bearer aExDTkE0c0JPc2prZXVqSkZmbjQ6MWI2dl9rUkdRYkNRR2dfamV3NnFlUQ==" />
+```
+設定完後一樣需要重新建置並重啟IIS，應該就可以看到資料了。
+
+可參考 [Instrument an ASP.NET application deployed on IIS](https://opentelemetry.io/docs/instrumentation/net/automatic/)
+
 
 ## 雜記
 
@@ -293,6 +342,7 @@ Register-OpenTelemetryForCurrentSession -OTelServiceName "RollDiceService"
 Windows Powershell XXXX.ps1 檔案無法載入](https://blog.twtnn.com/2013/11/windows-powershell-xxxxps1.html)
 
 [喬叔帶你上手 Elastic Stack - 探索與實踐 Observability 系列](https://training.onedoggo.com/tech-sharing/uncle-joe-teach-es-elastc-observability)
+
 [云原生观测性--OpenTelemetry 之实战篇](https://zhuanlan.zhihu.com/p/602846826)
 
 [APM-Server Error talk to ES](https://discuss.elastic.co/t/error-talk-to-server/328160)
@@ -315,4 +365,6 @@ Windows Powershell XXXX.ps1 檔案無法載入](https://blog.twtnn.com/2013/11/w
 
 [Elastic APM 8](https://blog.csdn.net/UbuntuTouch/article/details/124813605)
 
-[Kibana encryption reerror](https://hakanmazi123.medium.com/elasticsearch-unable-to-create-actions-client-because-the-encrypted-saved-objects-plugin-is-missing-5736b9a7a1c1)
+[Kibana encryption error](https://hakanmazi123.medium.com/elasticsearch-unable-to-create-actions-client-because-the-encrypted-saved-objects-plugin-is-missing-5736b9a7a1c1)
+
+[OpenTelemetry .NET](https://github.com/open-telemetry/opentelemetry-dotnet/tree/main)
