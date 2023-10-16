@@ -31,7 +31,7 @@ Observability三本柱
 
 ## 遙測資料(Telemetry)
 
-指的是從跨越不同系統來源的迎用程式中收集資料，其中包含 log, metrics, trace 等資料。
+指的是從跨越不同系統來源的應用程式中收集資料，其中包含 log, metrics, trace 等資料。
 
 
 # 淺談 OpenTelemetry (Concept)
@@ -194,3 +194,5 @@ https://training.onedoggo.com/tech-sharing/uncle-joe-teach-es-elastc-observabili
 https://opentelemetry.io/docs/specs/otel/metrics/data-model/#exemplars
 
 https://marcus116.blogspot.com/2022/01/opentelemetry-in-asp-net.html.html
+
+https://www.cnblogs.com/hacker-linner/p/17613281.html

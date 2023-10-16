@@ -1,7 +1,7 @@
 
 # OpenTelemetry .Net Instrumentation
 
-at# 前言
+# 前言
 
 本篇文章為研究如何在.net中使用OpenTelemetry進行Instrumentation，會探討Auto + manually 以及全 manually的內容
 
@@ -55,7 +55,7 @@ using (var activity = source.StartActivity("Main"))
 
 接著左方的filter選擇`APM`
 
-![Alt text](images/AMP.png)
+![Alt text](images/APM.png)
 
 接著在右方可看到剛剛傳送上來的`traces`，點選其中一個並查看其內容。
 ![Alt text](images/APM2.png)
@@ -76,24 +76,87 @@ using (var activity = source.StartActivity("Main"))
     var successCounter = meter.CreateCounter<long>("srv.successes.bing", description: "Number of successful responses");
     successCounter.Add(1, new KeyValuePair<string, object?>("tagName", "tagValue"));
 ```
-命名一個名為`Sample.Service`的`Meter`，並且建立一個名為`srv.successes.count`的`counter`，並且加入一個`tag`為`tagName`，`value為tagValue`的`counter`。
+命名一個名為`Sample.Service`的`Meter`，並且建立一個名為`srv.successes.bing`的`counter`，並且加入一個`tag`為`tagName`，`value為tagValue`的`counter`。
  
 接著就是開始建置後使用ELK觀察結果，首先一樣到左方的`menu`選擇`discover`，並且左方的filter選擇`APM`
 接著在右方的filter輸入`data_stream.type:"metrics" `，可看到下方出現相關的record，點選其中一條即可看到剛剛傳送上來的`srv.successes.bing`，並且可以看到剛剛設的tag已經被傳送上來了。
 
 ![Alt text](images/meter.png)
 
-## Todo
+`ps. metrics預設為每分鐘一筆，所以要等一分鐘才會出現。traces則是每個operation的當下產生並送出。`
 
+# 常用的Trace Instrumentation
 
-1. manually instrumentation
-2. manually register to Auto
-3. metrics
-4. trace
-5. event/span/link
-6. filter
-7. sampling
-8. processor
+## Nest Activities
+
+指的是多個Activities並且有父子(Parent-Child)關係，這種情況下，會有一個`root activity`，並且會有一個`parent activity`，`parent activity`會有一個或多個`child activity`，`child activity`也可以有`child activity`，如此一來就會形成一個`activity tree`。
+
+```json
+{
+  "_index": ".ds-traces-apm-default-2023.10.06-000001",
+  "_id": "NSAAJ4sBh0qJozGPC6sB",
+  "_version": 1,
+  "_score": null,
+  "fields": {
+    "span.name": [
+      "ChildActivity"
+    ],
+    "service.language.name": [
+      "dotnet"
+    ],
+    "labels.telemetry_auto_version": [
+      "1.0.2"
+    ],
+    "trace.id": [
+      "627ca227ecc96876d51575f50c8a5f39"
+    ],
+    "span.duration.us": [
+      1
+    ],//下略
+}
+```
+```json
+{
+  "_index": ".ds-traces-apm-default-2023.10.06-000001",
+  "_id": "NiAAJ4sBh0qJozGPC6sB",
+  "_version": 1,
+  "_score": null,
+  "fields": {
+    "span.name": [
+      "ParentActivity"
+    ],
+    "service.language.name": [
+      "dotnet"
+    ],
+    "labels.telemetry_auto_version": [
+      "1.0.2"
+    ],
+    "trace.id": [
+      "627ca227ecc96876d51575f50c8a5f39"
+    ],//下略
+  },
+  "sort": [
+    1697166392771
+  ]
+}
+```
+
+![Alt text](images/nestActivity.png)
+
+## Todo 
+
+1. manually instrumentation # D
+2. manually register to Auto # D
+3. HTTP
+4. SQL
+5. library instrumentation
+[lib list](https://opentelemetry.io/ecosystem/registry/?language=dotnet&component=instrumentation)
+6. metrics 
+7. trace
+8. event/span/link
+9.  filter
+10. sampling
+11. processor
 
 ## resource
 
