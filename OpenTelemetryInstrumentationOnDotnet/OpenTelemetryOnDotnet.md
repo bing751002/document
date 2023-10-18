@@ -135,11 +135,12 @@ services:
 1. 選擇 `Add Fleet Server` 
 2. 選擇`Advance`
 3. 然後點選`Create Polity`
-4. 當出現`Agent Policy Created`出現時，代表有成功。
-5. 產生`service-token`
-6. 將token貼回`docker-compose.yml/fleet-server.FLEET_SERVER_SERVICE_TOKEN`的欄位
-7. 重啟`docker-compose up`
-8. 回到網頁確認是否有連上fleet-server
+4. 將token貼回`docker-compose.yml/fleet-server.FLEET_SERVER_SERVICE_TOKEN`的欄位
+5. 當出現`Agent Policy Created`出現時，代表有成功。
+6. 產生`service-token`
+7. 
+8. 重啟`docker-compose up`
+9.  回到網頁確認是否有連上fleet-server
 
 流程可參考以下示範
 
