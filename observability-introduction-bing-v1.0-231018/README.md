@@ -1,31 +1,24 @@
 
-# Observability Overview
+# Observability 修煉之路
 
 # 前言
 
-本文為簡介Observability的概念，並且說明如何在.Net使用OpenTelemetry來實作Observability。
-
-本系列文為介紹Observability相關內容，並且說明如何在.Net使用OpenTelemetry來實作Observability。主要會涵蓋一下項目
-
-1. Observability簡介
-2. OpenTelemetry簡介
-3. ELK簡介含安裝(by docker)
-4. OpenTelemetry on .net
-5. 實作範例
-
-本文撰寫時的OTel版本為: `1.25`
+本文為Observability的概念，並且說明如何在.Net使用OpenTelemetry來實作Observability。主要會涵蓋以下項目
 
 ## Topic List
 
 以下為預計分享的topic 列表
 
 - Observability 概述
-  - Trace
+  - Tracing
   - Log
   - Metrics
+  - ELK
+    - 現有架構
+    - 結合OTel
 - OpenTelemetry
   - Overview
-  - Spec
+  - Span
 - Docker
   - Overview
   - Docker-compose
@@ -44,6 +37,7 @@
 。白話一點的說法就是能夠藉由`系統外的資訊觀察系統內部的運作狀態`。
 
 以看醫生來舉例就是觀察血壓、體溫、心跳、抽血觀察等等，來判斷身體內部的狀況。
+
 
 Observability三本柱
 
@@ -435,4 +429,6 @@ using (var activity = source.StartActivity("Main"))
 
 
 ## resource
+
+
 
