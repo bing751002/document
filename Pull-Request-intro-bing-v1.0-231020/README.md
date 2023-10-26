@@ -24,3 +24,10 @@ Pull Requests是一種開發流程中的一環，透過code review的方式，�
 2. accept changes& merge
 
 ![Alt text](images/pr-review.gif)
+
+
+## Why need code review?
+
+- 減少bug
+- share 經驗
+- 統一團隊開發風格以及domain knowledge

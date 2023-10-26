@@ -1,0 +1,172 @@
+{
+  "main": {
+    "id": "9d89be1c4501cfa6",
+    "type": "split",
+    "children": [
+      {
+        "id": "894e3e310ef80028",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "50dec120f701b875",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "code-review-performance-bing-v1.0-231026/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1f901769b5d7ae6f",
+    "type": "split",
+    "children": [
+      {
+        "id": "93fcbbe02b0cd2ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3350cef0bc51a2c9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "707df2bb553c4d19",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f055c94d4e2582d2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9ec60f25ac9c2495",
+    "type": "split",
+    "children": [
+      {
+        "id": "7d3dfe5c99544505",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "23d3d2d7e9b5a867",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "code-review-performance-bing-v1.0-231026/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "95d399365be433a5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "code-review-performance-bing-v1.0-231026/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0a5a195ac2dbabd3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "adb374bcf2410e33",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "code-review-performance-bing-v1.0-231026/README.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "50dec120f701b875",
+  "lastOpenFiles": [
+    "E2E測試框架介紹/E2E 測試框架介紹.md",
+    "code-review-performance-bing-v1.0-231026/README.md.md",
+    "code-review-performance-bing-v1.0-231026/README.md",
+    "consul-introduction-bing-v1.0-231026/README.md",
+    "Untitled.md",
+    "Code Review Performance.md",
+    "code-review-performance-bing-v1.0-231026",
+    "consul-introduction-bing-v1.0-231026/images/architecture.png",
+    "consul-introduction-bing-v1.0-231026/images",
+    "consul-introduction-bing-v1.0-231026/architecture.png",
+    "consul-introduction-bing-v1.0-231026/image.png",
+    "consul-introduction-bing-v1.0-231026",
+    "環境建置檔案/sqldeveloper-23.1.0.097.1607-x64/sqldeveloper/jdk/jre/legal/java.base/unicode.md",
+    "daily-work-record/README.md",
+    "observability-introduction-bing-v1.0-231018/README.md",
+    "observability-introduction-bing-v1.0-231018/slide.md",
+    "Untitled.canvas",
+    "docker-podman-intro-bing-v1.0-231025/README.md",
+    "Camunda介紹/Log 系統比較.md",
+    "測試框架規範介紹/測試框架規範.md"
+  ]
+}

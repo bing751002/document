@@ -83,12 +83,12 @@ Manual Instrumentation為透過`手動`的方式，將Telemetry資料從系統�
 - Manual 則是可以自訂細部的tracing以及metrics量測，缺點就是要改code，
 
 
-# ELK 簡介
+# EL(F)K 簡介
 
 EL(F)K為一套由Elastic所提供的開源軟體組合，包含Elasticsearch, Logstash(FluentD), Kibana三個軟體
 
 - Elasticsearch為一個分散式搜尋引擎，也是個TSDB(Time Series Database)，來儲存以及搜尋資料。
-- Logstash為一個資料收集引擎，建立data process pipline，
+- Logstash(FluentD)為一個資料收集引擎，建立data process pipline，
 - Kibana為一個資料視覺化工具。
 
 ## ELK流程圖

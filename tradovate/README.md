@@ -6,3 +6,8 @@
 # 2023-10-24
 ![Alt text](images/2023-10-24-1.png)
 ![Alt text](images/2023-10-24-2.png)
+
+# 2023-10-25
+![Alt text](images/2023-10-25.png) 
+![Alt text](images/2023-10-25-2.png) 
+# 2023-10-26
