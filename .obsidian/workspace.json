@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "code-review-performance-bing-v1.0-231026/README.md",
+                "file": "docker-podman-intro-bing-v1.0-231025/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "code-review-performance-bing-v1.0-231026/README.md",
+                "file": "docker-podman-intro-bing-v1.0-231025/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "code-review-performance-bing-v1.0-231026/README.md",
+                "file": "docker-podman-intro-bing-v1.0-231025/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "code-review-performance-bing-v1.0-231026/README.md"
+                "file": "docker-podman-intro-bing-v1.0-231025/README.md"
               }
             }
           }
@@ -148,20 +148,34 @@
   },
   "active": "50dec120f701b875",
   "lastOpenFiles": [
+    "ETMall-cicd-workshop-bing-v1.0-231030/images/13.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/image.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/images/12.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/12.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/images/11.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/images/10.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/10.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/images/9.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/images/8.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/8.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/images/7.png",
+    "ETMall-cicd-workshop-bing-v1.0-231030/README.md",
+    "ETMall-cicd-workshop-bing-v1.0-231030/2.md",
+    "ETMall-cicd-workshop-bing-v1.0-231030/images",
+    "ETMall-cicd-workshop-bing-v1.0-231030",
+    "ETMall/README.md",
+    "ETMall",
+    "code-review-performance-bing-v1.0-231026/README.md",
+    "daily-work-record/README.md",
     "E2E測試框架介紹/E2E 測試框架介紹.md",
     "code-review-performance-bing-v1.0-231026/README.md.md",
-    "code-review-performance-bing-v1.0-231026/README.md",
     "consul-introduction-bing-v1.0-231026/README.md",
     "Untitled.md",
     "Code Review Performance.md",
     "code-review-performance-bing-v1.0-231026",
-    "consul-introduction-bing-v1.0-231026/images/architecture.png",
     "consul-introduction-bing-v1.0-231026/images",
-    "consul-introduction-bing-v1.0-231026/architecture.png",
-    "consul-introduction-bing-v1.0-231026/image.png",
     "consul-introduction-bing-v1.0-231026",
     "環境建置檔案/sqldeveloper-23.1.0.097.1607-x64/sqldeveloper/jdk/jre/legal/java.base/unicode.md",
-    "daily-work-record/README.md",
     "observability-introduction-bing-v1.0-231018/README.md",
     "observability-introduction-bing-v1.0-231018/slide.md",
     "Untitled.canvas",
