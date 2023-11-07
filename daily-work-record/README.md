@@ -5,3 +5,4 @@
 # 231020 - markdown-cheatsheat-bing-v1.0-231019
 # 231020 - 導入PR flow 
 # 231024 - 優化Jenkinsfile 縮短5分鐘
+# 231106 - 協助亞琳哥 定期將mongodb log summary到另一個collection

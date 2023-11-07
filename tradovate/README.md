@@ -17,3 +17,6 @@
 ![Alt text](images/2023-10-27-3.png)
 # 2023-10-30
 ![Alt text](images/2023-10-30-1.png)
+
+又在凹單 攤平
+![Alt text](images/2023-10-30-2.png) 

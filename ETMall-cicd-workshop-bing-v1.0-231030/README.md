@@ -73,10 +73,20 @@ IaC 的程式碼在單一環境通常只會有一個版本(YAML檔)
 ![Alt text](images/11.png)
 ![Alt text](images/12.png) 
 
-目前azure artifacts 目前不支援docker image，所以需要透過其他方式來管理docker image，透過 [Quay](https://quay.io/)管理
+目前azure artifacts 目前不支援docker image，所以需要透過其他方式來管理docker image，透過[Quay](https://quay.io/)管理
 
  
 ![Alt text](images/13.png)
+![Alt text](images/14.png) 
+
+
+
+
+
+
+
+# Todo
 
 ## 學習撰寫dockerfile
 ## YAML 檔案的管理
+
