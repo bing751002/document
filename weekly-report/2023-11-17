@@ -1,0 +1,23 @@
+date: 2023-11-13 ~ 2023-11-17
+
+Work in Progress:
+
+- mongodb query monitor 安裝文件
+- 更新 mongodb query 說明
+
+
+Done:
+
+Output Documents:
+- mongodb-query-bing-v1.0-231105 紀錄mongodb語法以及問題，補充說明
+- mongodb dashboard 程式安裝文件
+
+Next Week Plan:
+
+
+
+Note:
+- https://ithelp.ithome.com.tw/articles/10340539
+- Grafana Tempo 搭配 Odigos 實現 NoCode Observability
+- B2B/B2E後台管理系統
+- 

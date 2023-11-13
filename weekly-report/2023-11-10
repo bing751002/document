@@ -1,0 +1,26 @@
+date: 2023-11-06 ~ 2023-11-10
+
+Work in Progress:
+
+- 已完成mongodb語法建立統計每小時collection出現的欄位次數並撰寫紀錄文件
+- 找出jenkins build vue components的問題並解決
+
+Done:
+
+- 將mongodb資料匯入ELK並建立dashboard
+- 在ELK上建立mongodb 資料查詢的 dashboard
+- 找出jenkins build vue components的問題並解決
+
+Output Documents:
+- mongodb-query-bing-v1.0-231105 紀錄mongodb語法以及問題，補充說明
+- mongodb dashboard 程式安裝文件
+
+Next Week Plan:
+
+- 撰寫minikube安裝文件
+
+Note:
+- https://ithelp.ithome.com.tw/articles/10340539
+- Grafana Tempo 搭配 Odigos 實現 NoCode Observability
+- B2B/B2E後台管理系統
+- 

@@ -1,14 +1,92 @@
 # 使用mongodb語法計算每個欄位出現的次數
 
-## 原由
 
-因維運組希望計算某mongo collection中每個欄位出現的次數，以便後續做資料分析，因此我們需要將每個欄位的值都列出來，並計算出現的次數。
+
+## 背景
+
+mongodb中有一個collection用來記錄每次有sql欄位變動的歷程，每一次變動都會寫入一筆資料，
+
+需求為希望統計此collection中每個欄位出現的次數，以便後續做資料分析，因此需要計算每個欄位出現的次數。
+
+## Log_salesmix_lite collection
+
+用來記錄sql欄位變動的collection，每次sql欄位變動都會寫入一筆資料，因此可以用來計算每個欄位出現的次數。
+
+![Alt text](images/1.png)
+
+## 嘗試用nodejs程式計算
 
 一開始想法是用nodejs程式連結mongodb撈出資料後進行計算，但後來發現效能太差，因此改用mongodb語法進行計算。
+
 
 以下語法以及說明
 
 note : 2023-11-05T00:00:00+0800 代表+8時區
+
+
+## 目標
+
+原有的資料結構 array，每個key代表當次有更改的欄位以及對應的數值
+
+- 每次修改內容不同，所以每個json的key以及數量也會不同
+
+
+``` json
+[{
+    "_id" : ObjectId("58c8c066275ae7289cad62ce"),
+    "saleCode" : "00000013",
+    "prdDesVendor" : null,
+    "prdDesPlanner" : null,
+    "prdDesOutPlanner" : null,
+    "categoryId" : NumberLong(30204),
+    "name" : "桂格養氣人蔘aa=",
+    "id_ProductProperty" : NumberLong(1),
+    "beginSaleTime" : ISODate("2010-07-01T16:00:00.000Z"),
+    "endSaleTime" : ISODate("2099-12-30T16:00:00.000Z"),
+    "statusId" : null,
+    "marketPrice" : "7000.00000",
+    "salePrice" : "7000.00000",
+    "costPrice" : "5001.00000",
+    "grossMargin" : "1999.00000",
+    "grossProfit" : "0.29000",
+    "presentDescription" : null,
+    "shelveReservation" : 1,
+    "canReturn" : 1,
+    "canChange" : 1,
+    "paymentPeriod" : 60,
+    "installmentSetting" : 1,
+    "shipmentTaxType" : null,
+    "isReceipt" : null,
+    "employeePrice" : "6990.00",
+    "saleBonus" : null,
+    "canBuyByProfit" : 1,
+    "canBuyByAccount" : null,
+    ...
+    }
+    ,...
+    ]
+```
+
+目標
+```json
+{
+    "lastModifier" : 9.0,
+    "lastModifiedTime" : 8.0,
+    "primary_key" : 9.0,
+    "isExpressProduct2" : 2.0,
+    "fugoContractNo" : 1.0,
+    "isExpressProduct" : 2.0,
+    "trg_action" : 9.0,
+    "_id" : 9.0,
+    "trg_create_on" : 9.0,
+    "saleCode" : 9.0,
+    ...
+}
+```
+
+
+`使用aggregate 方法做pipeline計算，需設計各種stage達到我們想要的結果`
+
 
 ### Step.1 撈出需要計算的資料
 
@@ -24,7 +102,10 @@ note : 2023-11-05T00:00:00+0800 代表+8時區
         }
     },
 ```
-### Step.2 根據primary_key分組，並把data放進一個array中
+
+![Alt text](images/2.png)
+
+### Step.2 根據primary_key分組，並把同個key的data放進一個array中
 
 ```js
 {
@@ -34,29 +115,28 @@ note : 2023-11-05T00:00:00+0800 代表+8時區
         }
     },
 ```
-### Step.3 將data中的欄位都列出來並且將data array轉成object
+
+![Alt text](images/3.png)
+
+### Step.3 將data array轉成object
 
 ```js
-{
-        $project: {
-            _id: 1,
-            data: 1,
-            // 列举所有其他字段，或者使用自动生成的字段列表
-        }
-},
 {
         $unwind: "$data"
 },
 ```
+
+![Alt text](images/4.png)
+
 ### Step.4 重新組合object，並且將每個欄位轉成key-value的形式
 
 ```js
-{
+    {
         $replaceRoot: { newRoot: "$data" }
     },
     {
         $project: {
-            _id: 0,
+            _id: 1,
             trg_create_on: 1,
             // 使用 $objectToArray 将文档转换为键值对数组
             fields: { $objectToArray: "$$ROOT" }
@@ -66,6 +146,8 @@ note : 2023-11-05T00:00:00+0800 代表+8時區
         $unwind: "$fields"
     },
 ```
+ 
+![Alt text](images/5.png)
 
 ### Step.5 根據key做group並計算次數
 
@@ -86,6 +168,8 @@ note : 2023-11-05T00:00:00+0800 代表+8時區
     }
 },
 ```
+![Alt text](images/6.png)
+
 ### Step6. 重新組合資料並取出所需要的data
 
 ```js
@@ -100,7 +184,7 @@ note : 2023-11-05T00:00:00+0800 代表+8時區
                         in: {
                             k: "$$item._id.field",
                             //v: {
-                            //    count: "$$item.count",
+                            //    count: "$$item.count", 
                              //   values: "$$item.values"
                             //}
                            v:"$$item.count"
@@ -113,7 +197,12 @@ note : 2023-11-05T00:00:00+0800 代表+8時區
     {
         $replaceRoot: { newRoot: "$result" } // 将 result 字段作为新的根
     },
+
 ```
+![Alt text](images/7.png)
+
+
+
 ### Step7. 加入新的欄位並將結果寫入新的collection
 
 ```js
@@ -345,3 +434,14 @@ namespace runMongoDailyJob
 ```
 
 ## 在正式區執行一次約為3秒，可將約10萬筆的record所有欄位計算出來並寫入新的collection中
+
+
+# 透過ELK視覺化
+
+1. 修改C#程式碼如下，可以將結果寫入ELK中
+   
+   [參考](https://gitlab.etzone.net/B2BB2E/b2b_team-developer-docs/tree/master/personal-docs/bing%E7%B6%AD%E6%96%8C/code/mongoDBDailyJob)
+
+2. 建立dashboard 把結果視覺化，可依此觀察各欄位次數的變化
+
+![Alt text](images/8.png)

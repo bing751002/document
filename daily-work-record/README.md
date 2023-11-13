@@ -6,3 +6,7 @@
 # 231020 - 導入PR flow 
 # 231024 - 優化Jenkinsfile 縮短5分鐘
 # 231106 - 協助亞琳哥 定期將mongodb log summary到另一個collection
+# 231109 - ELK dashboard 監測mongodb
+# 231110 - 產出安裝文件 mongodb monitor
+# 231113 - 產出安裝文件 mongodb monitor
+

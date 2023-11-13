@@ -1,0 +1,12 @@
+date: 2023-10-30 ~ 2023-11-03
+
+Work in Progress:
+
+- 協助亞琳哥使用mongodb語法建立統計每小時collection出現的欄位次數
+- 研究以及撰寫docker/k8s文件
+
+Output Documents:
+
+Next Week Plan:
+- 完成mongodb語法建立統計每小時collection出現的欄位次數
+- 撰寫minikube安裝文件
