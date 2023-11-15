@@ -444,4 +444,22 @@ namespace runMongoDailyJob
 
 2. 建立dashboard 把結果視覺化，可依此觀察各欄位次數的變化
 
-![Alt text](images/8.png)
+- 選取左方的dashboard
+
+![Alt text](images/9.png)
+
+- Create Visualization
+
+![Alt text](images/11.png)
+
+- 圖表類型選取 `Bar vertical percentage`
+
+![Alt text](images/10.png)
+
+- 設定右方x-axis以及y-axis，breakdown的部分記得選`name`
+
+![Alt text](images/13.png)
+
+- 結果
+  
+![Alt text](images/8.png) 
