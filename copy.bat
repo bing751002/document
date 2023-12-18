@@ -9,5 +9,9 @@ xcopy D:\EHSN\doc\ETMall-cicd-workshop-bing-v1.0-231030  D:\EHSN\b2b_team-develo
 xcopy D:\EHSN\doc\ETMall-cicd-workshop-bing-v1.0-231102  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\ET20\ETMall-cicd-workshop-bing-v1.0-231102  /s/Y/I
 xcopy D:\EHSN\doc\mongodb-query-bing-v1.0-231105  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\mongoDB\mongodb-query-bing-v1.0-231105  /s/Y/I
 xcopy D:\EHSN\doc\install-mongodb-query-monitoring-bing-v1.0-231113  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\mongoDB\install-mongodb-query-monitoring-bing-v1.0-231113  /s/Y/I
-
-
+xcopy D:\EHSN\doc\elk-search-long-response-query-bing-v1.0-231122  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\sre\elk-search-long-response-query-bing-v1.0-231122  /s/Y/I
+xcopy D:\EHSN\doc\openTelemetry-instrumentation-on-dotnet-bing-v1.0-231001  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\sre\openTelemetry-instrumentation-on-dotnet-bing-v1.0-231001  /s/Y/I
+xcopy D:\EHSN\doc\openTelemetry-manually-instrument-bing-v1.0-231002  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\sre\openTelemetry-manually-instrument-bing-v1.0-231002  /s/Y/I
+xcopy D:\EHSN\doc\openTelemetry-introduction-bing-v1.0-231030  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\sre\openTelemetry-introduction-bing-v1.0-231030  /s/Y/I
+xcopy D:\EHSN\doc\log-comparison-bing-v1.0-20230925  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\sre\log-comparison-bing-v1.0-20230925  /s/Y/I
+xcopy D:\EHSN\doc\weekly-report  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\weekly-report  /s/Y/I

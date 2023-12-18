@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docker-podman-intro-bing-v1.0-231025/README.md",
+                "file": "2023-12-11.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docker-podman-intro-bing-v1.0-231025/README.md",
+                "file": "2023-12-11.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docker-podman-intro-bing-v1.0-231025/README.md",
+                "file": "2023-12-11.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docker-podman-intro-bing-v1.0-231025/README.md"
+                "file": "2023-12-11.md"
               }
             }
           }
@@ -148,6 +148,9 @@
   },
   "active": "50dec120f701b875",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "2023-12-11.md",
+    "docker-podman-intro-bing-v1.0-231025/README.md",
     "tradovate/images/2023-10-30-2.png",
     "tradovate/2023-10-30-2.png",
     "tradovate/image.png",
@@ -158,7 +161,6 @@
     "ETMall-cicd-workshop-bing-v1.0-231030/images/13.png",
     "ETMall-cicd-workshop-bing-v1.0-231030/images/12.png",
     "ETMall-cicd-workshop-bing-v1.0-231030/12.png",
-    "ETMall-cicd-workshop-bing-v1.0-231030/images/11.png",
     "ETMall-cicd-workshop-bing-v1.0-231030/README.md",
     "ETMall-cicd-workshop-bing-v1.0-231030/2.md",
     "ETMall-cicd-workshop-bing-v1.0-231030/images",
@@ -178,8 +180,6 @@
     "環境建置檔案/sqldeveloper-23.1.0.097.1607-x64/sqldeveloper/jdk/jre/legal/java.base/unicode.md",
     "observability-introduction-bing-v1.0-231018/README.md",
     "observability-introduction-bing-v1.0-231018/slide.md",
-    "Untitled.canvas",
-    "docker-podman-intro-bing-v1.0-231025/README.md",
     "Camunda介紹/Log 系統比較.md",
     "測試框架規範介紹/測試框架規範.md"
   ]

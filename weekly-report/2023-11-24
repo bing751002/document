@@ -1,0 +1,24 @@
+date: 2023-11-19 ~ 2023-11-24
+
+Work in Progress:
+
+- 撰寫grafana 使用教學文件
+- 研究grafana alert system
+- 
+Done:
+
+Output Documents:
+- 更新 mongodb-query-bing-v1.0-231105 紀錄mongodb語法以及問題，補充說明
+- 研究grafana dashboard 儀錶板 並建立成images
+- 撰寫ELK 查詢 long query文件
+- 撰寫grafana 使用教學文件
+
+
+Next Week Plan:
+- 完成grafana dashboard 儀錶板 並建立成images
+
+
+Note:
+- https://ithelp.ithome.com.tw/articles/10340539
+- Grafana Tempo 搭配 Odigos 實現 NoCode Observability
+- B2B/B2E後台管理系統
