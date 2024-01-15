@@ -91,7 +91,8 @@
 - metadata list of text key/value pairs
 - tags 
 - 有板控但需要開啟才可以使用
-- 
+- 有web hosting的功能
+- 設定permission時要對bucket以及object分開設定
 ### DNS
 - Route53 AWS
 - 可細分成
@@ -145,7 +146,11 @@
 - policy 可以針對CRUD做細部設定
 - AWS的各項服務都必須先綁定IAM role，才能被使用，否則會出現permission denied
 - 有些基本定義好的policy可以直接使用，例如AdministratorAccess，EC2FullAccess
-- 
+- json
+  - effect: allow or deny
+  - action: AWS service的API
+  - resource: AWS service的資源
+  
 ### Billing
 ### Virtual Private Cloud (VPC)
 - VPC 是一個邏輯上的網路，可以在AWS上建立，並且可以自訂IP address range、subnet、route table、network gateway
@@ -160,4 +165,46 @@
 - NACL是一個firewall，可以設定inbound以及outbound的rule
 - 可以有allow 以及 deny policy
 - VPC flow logs 可以捕捉IP位置在VPC內的流量
-- 
+  
+### Dynamo
+- NoSQL
+
+### Lambda
+- 一次最多15分鐘
+- 若3分鐘沒有request進來，則lambda會被釋放
+- reqeusts on demand
+- capacity auto scaling
+- 計算能力與lambda設定的memory成正比
+- 可以使用AWS Lambda power tuner來調整memory
+- lambda service 負責pull 或是 push 去呼叫lambda function
+
+### AWS X-ray
+- 即時的分析應用程式的效能，cloudwatch偏向於offline監控，x-ray偏向於分析
+
+### Dynamo
+- NoSQL
+- SLA 10 ms response time
+- 99.9 % availability
+- Low latency
+- key-value store
+- attribute(欄) and item(列)
+- 為了達到SLA 10 ms response time，所以不支援join
+- IO partition
+- 10gb per partition
+- sort key 建立index查詢 加速索引
+- partion key(required) + sort key = primary key
+- 若insert時pk存在則覆蓋原有的
+- RCU (read capacity unit) of strongly consistent 4kb per session
+- WCU (write capacity unit) of 1kb per session
+- secondary index
+  - (GSI) global secondary index (index 與 table 不在同一個 partition)
+  - (LSI) local secondary index (index 與 table 在同一個 partition)
+  - redundant data
+- 在insert data時 GSI是獨立計算RCU以及WCU，LSI是跟data一起計算RCU以及WCU
+  - LSI table 讀取需要的RCU = table RCU + LSI RCU
+  - GSI 讀取需要的RCU = GSI RCU
+  - 每個item不能超過400k
+  - download時超過1MB會自動做pagination
+  - partition key選擇 多而不重複的資料
+  - eventually consistent 只需要 strongly consistency 一半的RCU
+    - 因為strongly consistency需要讀取兩次確保多數

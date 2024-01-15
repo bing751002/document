@@ -1,0 +1,39 @@
+
+# AWS Developer Course
+
+- aws cognito user pool: 應用系統以及user的認證
+- AWS polly 文字轉語音互轉
+- 三層式架構: UI, API, DB
+- S3 有web hosting的功能
+- 在cloud native 思維中，程式需要有可轉換的能力，例如可以轉成container image
+- Cloud9: browser-based IDE
+- 透過REST API 溝通，
+  - HTTP
+  - Sigv4
+  - IAM access key
+- requests 發送到AWS 自己host的API server去使用服務
+- 因為都會透過API server去使用服務，所以可以透過Cloudtrail 去做 log audit
+- AWS API 會檢查server時間，如果跟client時間差太多，會被拒絕
+- 要開啟NTPClient 才能讓server時間跟client時間同步
+- SDK分low-level以及high-level
+  - low level per operation
+  - high level: one class per conceptual
+- cli cmd
+  - aws [service] [subcommand] [parameters]
+- S3的參數哪些是必要的，哪些是選擇性的
+  - Sid (required)
+  - Effect (required)
+  - Principal (optional)
+  - Resource (required)
+- policy evaluation
+  - explicit deny
+  - explicit allow
+  - implicit deny
+  - service role 會自動取得token，所以不需要credential，有較
+  - 高的安全性
+- S3
+  - 沒有folder的概念，只有bucket以及object
+  - 實際上只有prefix，沒有folder
+  - 可以設定不同的Access endpoint給不同role去使用
+  - AWS S3 sync B1 B2: 將B1的內容同步到B2，如果B2有B1沒有的檔案，會自動新增，不會刪除B2裡面B1沒有的檔案
+  - AWS S3 sync --delete B1 B2 會將B2裡面B1沒有的檔案刪除
