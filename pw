@@ -1,0 +1,94 @@
+jenkins:
+bing
+22456427Ehs
+
+[ETzone WiFi]
+ETzone
+iloveehsulife
+
+[森活家]
+(Local)
+http://localhost:8081/B2EMobile/B2EMobileLogin
+(Dev)
+http://b2b.lab.etzone.net/B2EMobile/B2EMobileLogin
+(Prod)
+https://B2B.etmall.com/B2EMobile/MainPage
+
+select * from [MaintainCenter]..API_SystemParameters
+ 
+select * from [MaintainCenter]..API_KeyStore
+--where type = 'SecretKey'
+--where type = 'AppKey'
+ 
+SELECT * FROM [FRI_FORMAL].[dbo].[User]
+where accountName = 'matrix.wong'
+ 
+SELECT * FROM [FRI_FORMAL].[dbo].[API_License]
+where id_user = 40155
+ 
+SELECT TOP 10 * FROM [MaintainCenter].[dbo].[API_Logs]
+ORDER BY 1 DESC
+
+AqF$7##pB$Qa
+
+[AD]
+d1718679D.
+
+
+1.	Lab 區的機器
+username: etzone\bewebadm01
+密碼: QWer!@34
+
+	dev-jobbe01.etzone.net 包括以下的排程及服務
+B2B.Schedule/B2E.Schedule/FJob/SyncB2CJob/B2E.SendEmail/CompressVideo
+	dev-webbe01.etzone.net 包括以下的系統及排程
+B2B站台/B2E站台/MoveVideoJob
+B2B: http://b2b.lab.etzone.net/Web/B2B_B2ELogin
+B2E: http://b2e.lab.etzone.net/web/B2ELogin
+
+NewB2B: http://newb2b.lab.etzone.net/Web/B2B_B2ELogin
+NewB2E: http://newb2e.lab.etzone.net/web/B2ELogin
+NewB2B/NewB2E 有大型專案時或特殊需求才會佈版
+
+	dev-bpbe01.etzone.net 包括以下的系統及服務
+Red.API/RPCService
+Red.API token url sample: http://dev-bpbe01.etzone.net/o/Token
+Red.API 文件, 放在
+Redmine:
+https://redmine.etzone.net/projects/b2b/wiki/%E4%BE%9B%E6%87%89%E5%95%86API
+或直接下載:
+https://redmine.etzone.net/attachments/download/15665/B2B%E4%BE%9B%E6%87%89%E5%95%86%E7%B3%BB%E7%B5%B1_API%E4%B8%B2%E6%8E%A5%E8%AA%AA%E6%98%8E%E6%96%87%E4%BB%B6_20181204.docx
+
+自動佈版時間: 每天: 8:30/12:30/19:30  
+(NewB2B/NewB2E 是手動佈版, 目前git branch 是使用lab branch)
+Jenkins: https://jenkins.etzone.net/job/B2B-B2E/
+ 
+2.	Stage的機器 帳密: 請有需要時, 跟 康益誠 或 楊偉志 詢問
+	10.60.17.60 包括以下的系統及服務
+B2B站台/B2E站台, 原則上是不會有JOB在Stage上常駐在執行, 頂多是要測試才會手動執行, 
+BTW, 絕對不能同時起兩個FJOB, 正式區的FJOB是永遠都啟動的
+	10.60.17.70 包括以下的系統及服務
+Red.API/RPCService
+Red.API token url sample: http://10.60.17.70/o/Token 
+3.	正式區的機器 帳密: 請有需要時, 跟 康益誠 或 楊偉志 詢問
+	B2BWeb		VIP: 10.60.17.21
+i.	10.60.17.31
+ii.	10.60.17.32
+	B2EWeb/B2EWeb.API  VIP: 10.60.17.22
+i.	10.60.17.33
+ii.	10.60.17.34
+	RedAPI	VIP: 10.60.17.24
+i.	10.60.17.36
+ii.	10.60.17.37
+	B2CImageService/ MediaService/ SPMFugoService/ TVProductService
+i.	10.60.17.44
+ii.	10.60.17.45
+	B2EImageService
+i.	10.60.17.33
+ii.	10.60.17.34
+	B2B.Schedule/B2E.Schedule/FJob/SyncB2CJob/B2E.SendEmail
+i.	10.60.17.44
+	MoveVideoJob/OCRVideoJob
+i.	10.60.17.45
+	CompressVideo
+i.	10.60.17.56

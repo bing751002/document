@@ -48,3 +48,5 @@ Study: Siugar, Robbin, Matrix, Jim, 昀珊, 雅芳
 1/15 新的軟體架構/開工
 2/28 效能測試
 3/15 完成
+
+前面是否要有revers proxy

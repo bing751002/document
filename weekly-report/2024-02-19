@@ -1,12 +1,16 @@
-date: 2024-01-15 ~ 2024-01-19
+date: 2024-02-19 ~ 2024-02-26
 
 Work in Progress:
 
 
-- SCM dashboard website
-- grafana 建立基本的滔寶用量監控
-- 短網址azure devops pipeline 完成CI build完image後可上傳到quay
-- 
+- 森活家App push Dev 測試完，等2/26上線
+- aws上課
+- ehs2.0 責任分工說明
+  - 前後端分鐘
+  - 前端 jim, yvoone, alex, linsun
+  - 後端 bing, robbin, siugar, matrix
+- 森活家App push 正式上線
+
 Output Documents:
 
 Next Week Plan:

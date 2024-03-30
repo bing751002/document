@@ -30,9 +30,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c7c110fce7fdcb14",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.3"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -160,7 +170,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "707df2bb553c4d19",
+  "active": "c7c110fce7fdcb14",
   "lastOpenFiles": [
     "Untitled 1.canvas",
     "2024-01-08.md",

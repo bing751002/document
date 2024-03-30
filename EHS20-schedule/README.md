@@ -1,0 +1,27 @@
+
+- Live-TV
+  - develop
+    - frontend
+      - vue
+    - backend
+      - .NET Core  
+  - deploy
+    - CI/CD
+      - Jenkins + docker
+        - 專案裡面有dockerfile，用jenkins跑job去執行dockerfile建立image
+        - 上傳到docker registry
+          - 需要建立docker registry
+            - 建在哪? -> 先暫用公司registry -> 使用憑證後即可上傳以及pull image
+        - vue CI/CD
+          - npm run build
+          - copy file to web server
+        - CD => 下載docker image並且執行
+        - 測試機以及正式機環境安裝docker
+          - 測試機
+            - 測試機環境安裝docker
+          - 正式機
+            - 正式機環境安裝docker
+  - test
+    - 測試Line server
+    - 
+  - production

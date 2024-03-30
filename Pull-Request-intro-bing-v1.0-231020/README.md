@@ -23,7 +23,7 @@ Pull Requests(Merge Requests, MR)是一種開發流程中的一環，在進版�
 1. view changes / left comment
 2. accept changes& merge
 
-![Alt text](images/pr-review.gif)
+![Alt text](images/pr-review.gif) 
 
 ## Note 
 

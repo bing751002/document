@@ -189,3 +189,8 @@ CI 裏頭跑docker build, 執行dockerFile 產生image
 `$(Pipeline.Workspace)/ci-echoapi-service-backend/drop/image-values.yaml`  引用另一個模板做完參數輸入
 
 `--output-files $(Build.ArtifactStagingDirectory)/yaml` 輸出的yaml檔案位置
+
+- quay目前是放在local sit 所以要透過別的agent去連接
+- pipeline 在寫yaml 時要指定agent pool
+
+https://bshayr29.medium.com/use-microsoft-azure-devops-pipeline-with-red-hat-openshift-282b85cb1737

@@ -1,12 +1,14 @@
-date: 2024-01-15 ~ 2024-01-19
+date: 2024-03-04 ~ 2024-03-08
 
 Work in Progress:
 
 
-- SCM dashboard website
-- grafana 建立基本的滔寶用量監控
-- 短網址azure devops pipeline 完成CI build完image後可上傳到quay
-- 
+- 森活家上線
+- 規劃SA文件
+- 森活家邏輯文案修正
+- 研讀入庫SA流程
+- 規劃SA文件時程
+
 Output Documents:
 
 Next Week Plan:

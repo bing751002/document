@@ -1,12 +1,13 @@
-date: 2024-01-15 ~ 2024-01-19
+date: 2024-02-05 ~ 2024-02-10
 
 Work in Progress:
 
 
-- SCM dashboard website
-- grafana 建立基本的滔寶用量監控
-- 短網址azure devops pipeline 完成CI build完image後可上傳到quay
-- 
+- 森活家App傳送teams正式上線
+- 還要將DB的連線方式改為Petapoco
+- 0206 AWS 考前衝刺
+- 例外處理方式分享
+- 森活家已串通android以及ios的版本，剩下只要把user讀取的部分確認即可
 Output Documents:
 
 Next Week Plan:
