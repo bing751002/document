@@ -109,10 +109,6 @@ services:
 可參考下方的gif圖，設定的密碼之後會用到，因此需要先記下來。
 ![Alt text](images/set-password.gif)
 
-設定完`kibana_system`的密碼後，需要把密碼設定回`docker-compose.yml/kibana.ELASTICSEARCH_PASSWORD的欄位`
-
-之後重跑一次`docker-compose up`
-
 啟動後可以看到docker container如下，並且可以透過`localhost:5601`進入Kibana
 
 ![Alt text](images/kibana.png)

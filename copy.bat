@@ -6,3 +6,4 @@ xcopy D:\EHSN\doc\log-comparison-bing-v1.0-20230925  D:\EHSN\b2b_team-developer-
 xcopy D:\EHSN\doc\scm-app-alert-to-teams-bing-v1.0-240205  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\scm-app-alert-to-teams-bing-v1.0-240205  /s/Y/I
 xcopy D:\EHSN\doc\tv-live-stream-env-setup-bing-v1.0-240306  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\bl-docs\tv-live-stream-env-setup-bing-v1.0-240306  /s/Y/I
 xcopy D:\EHSN\doc\weekly-report  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\weekly-report  /s/Y/I
+xcopy D:\EHSN\doc\scm-senLifeAppPush-handle-invalid-tokens-bing-v1.0-240530  D:\EHSN\b2b_team-developer-docs\personal-docs\bing維斌\skill-docs\scm-senLifeAppPush-handle-invalid-tokens-bing-v1.0-240530  /s/Y/I

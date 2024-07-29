@@ -109,3 +109,43 @@ Using Amazon SQS, you can send, store, and receive messages between software com
 
 # AWS Global Infrastructure
 
+# EFS Elastic File System
+## 定義 
+- Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources.
+## 優勢
+- EFS is designed to be highly available and durable.
+- EFS is a regional service that stores data within and across multiple Availability Zones (AZs) for high availability and durability.
+## EFS vs EBS
+- EFS is a shared file storage service that you can mount to multiple EC2 instances.
+- EBS is a block storage service that you can mount to a single EC2 instance.
+
+# Amazon Kinesis
+## 定義
+- Amazon Kinesis makes it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
+- Amazon Kinesis enables you to ingest, buffer, and process streaming data in real time.
+
+# Amazon Cloudtrail
+## 定義
+- AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.
+
+
+# Amazon Step Functions
+## 定義
+- AWS Step Functions is a serverless function orchestrator that makes it easy to sequence AWS Lambda functions and multiple AWS services into business-critical applications.q
+- Step Functions automatically triggers and tracks each step, and retries when there are errors, so your application executes in order and as expected.
+
+# AWS Outposts
+## 定義 
+- AWS Outposts is a fully managed service that extends AWS infrastructure, AWS services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience.
+
+## Outposts vs EC2
+- Outposts is a fully managed service that extends AWS infrastructure, AWS services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience.
+- EC2 is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
+
+# AWS Neptune
+## 定義
+- Amazon Neptune is a fast, reliable, fully managed graph database service that makes it easy to build and run applications that work with highly connected datasets.
+
+# Amazon AppStream 2.0
+## 定義
+- Amazon AppStream 2.0 is a fully managed application streaming service that allows you to stream desktop applications from AWS to a web browser.
